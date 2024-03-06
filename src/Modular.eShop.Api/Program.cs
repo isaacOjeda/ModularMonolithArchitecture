@@ -1,22 +1,46 @@
 using FastEndpoints;
+using Modular.eShop.Api.Extensions;
 using Modular.eShop.Infrastructure.Extensions;
+using Serilog;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
 
-// Servicios de API y Cross Cutting Concerns
-builder.Services.InstallServicesFromAssemblies(
-    builder.Configuration,
-    Modular.eShop.Api.AssemblyReference.Assembly);
+try
+{
+    Log.Information("Starting up");
 
-// Módulos de la aplicación
-builder.Services.InstallModulesFromAssemblies(
-    builder.Configuration,
-    Modular.eShop.Catalogs.Infrastructure.AssemblyReference.Assembly);
+    var builder = WebApplication.CreateBuilder(args);
 
-WebApplication app = builder.Build();
+    builder.Host.UseSerilogWithConfiguration();
 
-app.MapGet("/", () => "Hello World!");
+    // Servicios de API y Cross Cutting Concerns
+    builder.Services.InstallServicesFromAssemblies(
+        builder.Configuration,
+        Modular.eShop.Api.AssemblyReference.Assembly);
 
-app.UseFastEndpoints();
+    // Módulos de la aplicación
+    builder.Services.InstallModulesFromAssemblies(
+        builder.Configuration,
+        Modular.eShop.Catalogs.Infrastructure.AssemblyReference.Assembly);
 
-app.Run();
+    WebApplication app = builder.Build();
+
+    app.UseSerilogRequestLogging();
+    app.MapGet("/", () => "Hello World!");
+
+    app.UseFastEndpoints();
+
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Host terminated unexpectedly");
+
+    throw;
+}
+finally
+{
+    Log.CloseAndFlush();
+}
