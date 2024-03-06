@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modular.eShop.Persistence",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modular.eShop.Endpoints", "src\Common\Modular.eShop.Endpoints\Modular.eShop.Endpoints.csproj", "{4F004D6A-4432-44A6-B8FB-75DA9469C674}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modular.eShop.Shared", "Modular.eShop.Shared\Modular.eShop.Shared.csproj", "{935433A8-3D1E-4F96-803B-22F9CA968DF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modular.eShop.Shared", "src\Common\Modular.eShop.Shared\Modular.eShop.Shared.csproj", "{935433A8-3D1E-4F96-803B-22F9CA968DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
