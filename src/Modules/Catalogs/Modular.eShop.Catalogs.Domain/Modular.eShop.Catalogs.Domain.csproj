@@ -1,0 +1,5 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Modular.eShop.Domain\Modular.eShop.Domain.csproj" />
+  </ItemGroup>
+</Project>

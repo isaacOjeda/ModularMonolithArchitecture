@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Modular.eShop.Persistence\Modular.eShop.Persistence.csproj" />
+    <ProjectReference Include="..\Modular.eShop.Catalogs.Application\Modular.eShop.Catalogs.Application.csproj" />
+    <ProjectReference Include="..\Modular.eShop.Catalogs.Domain\Modular.eShop.Catalogs.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

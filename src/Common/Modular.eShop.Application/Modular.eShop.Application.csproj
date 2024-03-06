@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+		<PackageReference Include="MediatR" />
+		<PackageReference Include="FluentResults" />
+		<PackageReference Include="FluentValidation" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Modular.eShop.Shared\Modular.eShop.Shared.csproj" />
+		<ProjectReference Include="..\Modular.eShop.Domain\Modular.eShop.Domain.csproj" />
+	</ItemGroup>
+</Project>

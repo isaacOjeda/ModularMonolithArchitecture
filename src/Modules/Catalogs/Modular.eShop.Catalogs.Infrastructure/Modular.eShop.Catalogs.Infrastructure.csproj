@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+		<PackageReference Include="Scrutor" />
+		<PackageReference Include="MediatR" />
+		<PackageReference Include="FastEndpoints" />
+		
+		<!-- Shared / Common -->
+		<ProjectReference Include="..\..\..\Common\Modular.eShop.Application\Modular.eShop.Application.csproj" />
+		<ProjectReference Include="..\..\..\Common\Modular.eShop.Infrastructure\Modular.eShop.Infrastructure.csproj" />
+		<!-- Catalog Layers -->
+		<ProjectReference Include="..\Modular.eShop.Catalogs.Application\Modular.eShop.Catalogs.Application.csproj" />
+		<ProjectReference Include="..\Modular.eShop.Catalogs.Endpoints\Modular.eShop.Catalogs.Endpoints.csproj" />
+		<ProjectReference Include="..\Modular.eShop.Catalogs.Persistence\Modular.eShop.Catalogs.Persistence.csproj" />
+	</ItemGroup>
+
+</Project>

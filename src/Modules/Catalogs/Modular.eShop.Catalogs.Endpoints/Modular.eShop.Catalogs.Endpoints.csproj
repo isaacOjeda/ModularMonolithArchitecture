@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Modular.eShop.Endpoints\Modular.eShop.Endpoints.csproj" />
+    <ProjectReference Include="..\Modular.eShop.Catalogs.Application\Modular.eShop.Catalogs.Application.csproj" />
+  </ItemGroup>
+
+</Project>

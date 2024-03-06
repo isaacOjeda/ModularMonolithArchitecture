@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\Common\Modular.eShop.Application\Modular.eShop.Application.csproj" />
+		<ProjectReference Include="..\Modular.eShop.Catalogs.Domain\Modular.eShop.Catalogs.Domain.csproj" />
+	</ItemGroup>
+</Project>

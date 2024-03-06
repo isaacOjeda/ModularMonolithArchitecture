@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="FastEndpoints" />
+    <PackageReference Include="FluentResults" />
+    <PackageReference Include="FluentValidation" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Modular.eShop.Shared\Modular.eShop.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
