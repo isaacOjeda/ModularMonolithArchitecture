@@ -8,7 +8,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\..\Modular.eShop.Shared\Modular.eShop.Shared.csproj" />
 		<ProjectReference Include="..\Modular.eShop.Domain\Modular.eShop.Domain.csproj" />
+		<ProjectReference Include="..\Modular.eShop.Shared\Modular.eShop.Shared.csproj" />
 	</ItemGroup>
 </Project>
