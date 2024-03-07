@@ -1,3 +1,4 @@
+using System.Globalization;
 using FastEndpoints;
 using FastEndpoints.Swagger;
 using Modular.eShop.Api.Extensions;
@@ -5,7 +6,7 @@ using Modular.eShop.Infrastructure.Extensions;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console()
+    .WriteTo.Console(formatProvider: CultureInfo.InvariantCulture)
     .CreateLogger();
 
 try
@@ -21,7 +22,7 @@ try
         builder.Configuration,
         Modular.eShop.Api.AssemblyReference.Assembly);
 
-    // Módulos de la aplicación
+    // Mï¿½dulos de la aplicaciï¿½n
     builder.Services.InstallModulesFromAssemblies(
         builder.Configuration,
         Modular.eShop.Catalogs.Infrastructure.AssemblyReference.Assembly);
