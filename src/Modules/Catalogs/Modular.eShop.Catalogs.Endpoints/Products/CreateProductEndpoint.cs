@@ -19,6 +19,23 @@ internal class CreateProductEndpoint : Endpoint<CreateProductCommand>
         Verbs(Http.POST);
         Routes("/api/products");
         AllowAnonymous();
+
+        Description(d => d
+            .ProducesValidationProblem()
+            .Produces(StatusCodes.Status404NotFound));
+
+        Summary(s =>
+        {
+            s.Summary = "Create a product.";
+            s.Description = "Create a product.";
+            s.ExampleRequest = new CreateProductCommand
+            {
+                Name = "Product Name",
+                Description = "Product Description",
+                Price = 100.00m,
+            };
+            s.Responses[StatusCodes.Status200OK] = "Product created.";
+        });
     }
 
     public override async Task HandleAsync(CreateProductCommand request, CancellationToken ct)

@@ -1,4 +1,5 @@
 ﻿using FastEndpoints;
+using FastEndpoints.Swagger;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Modular.eShop.Infrastructure.Configuration;
@@ -11,6 +12,10 @@ internal class EndpointsServiceInstaller : IServiceInstaller
         services.AddFastEndpoints(options =>
         {
             options.Assemblies = [Endpoints.AssemblyReference.Assembly];
+        })
+        .SwaggerDocument(o =>
+        {
+            o.AutoTagPathSegmentIndex = 2;
         });
     }
 }

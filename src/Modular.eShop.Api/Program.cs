@@ -1,4 +1,5 @@
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using Modular.eShop.Api.Extensions;
 using Modular.eShop.Infrastructure.Extensions;
 using Serilog;
@@ -28,9 +29,10 @@ try
     WebApplication app = builder.Build();
 
     app.UseSerilogRequestLogging();
-    app.MapGet("/", () => "Hello World!");
+    app.MapGet("/", () => Results.Redirect("/swagger"));
 
-    app.UseFastEndpoints();
+    app.UseFastEndpoints()
+        .UseSwaggerGen();
 
     app.Run();
 }
